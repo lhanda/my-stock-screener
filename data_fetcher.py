@@ -32,7 +32,7 @@ def get_growth_estimates(ticker):
 
     for attempt in range(3):  # Retry 3 times
         try:
-            print(f"[{ticker}][Attempt {attempt}] Get growth estimates...")
+            print(f"[{ticker}][Attempt {attempt+1}] Get growth estimates...")
             response = requests.get(url, headers=HEADERS, timeout=10)
 
             if response.status_code == 429:
