@@ -89,7 +89,7 @@ def fetch_financial_data(tickers):
                     "de": de
                 })
 
-            time.sleep(0.1)
+            time.sleep(1)
 
         except Exception as e:
             print(f"Error fetching {ticker}: {e}")
