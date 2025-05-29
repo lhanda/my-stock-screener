@@ -5,3 +5,5 @@ sqlite3  # standard lib
 beautifulsoup4
 requests
 altair
+sqlalchemy
+python-dotenv
