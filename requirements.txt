@@ -1,0 +1,7 @@
+pandas
+yfinance
+streamlit
+sqlite3  # standard lib
+beautifulsoup4
+requests
+altair
