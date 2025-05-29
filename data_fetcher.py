@@ -5,7 +5,7 @@ import yfinance as yf
 import time
 
 HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
 }
 
 def get_sp500_tickers():
@@ -51,10 +51,10 @@ def get_growth_estimates(ticker):
             tables = soup.find_all('table')
 
             for table in tables:
-                if 'Growth Estimates' in table.text:
+                if f'{ticker}' in table.text:
                     for row in table.find_all('tr'):
                         cells = row.find_all('td')
-                        if cells and cells[0].text.strip() == 'Current Year':
+                        if cells and f'{ticker}' in cells[0].text:
                             growth_data = {
                                 "Current qtr.": parse_percent(cells[1].text),
                                 "Next qtr.": parse_percent(cells[2].text),
